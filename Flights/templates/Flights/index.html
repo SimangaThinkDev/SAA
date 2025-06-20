@@ -11,7 +11,8 @@ Home
     <ul>
         {% for flight in flights %}
         <li>
-            Flight {{ flight.id }}: {{ flight.origin }} to {{ flight.destination }} for {{ flight.duration }} minutes
+            <a href="{% url 'flights:flight' flight.id %}">Flight {{ flight.id }}</a>
+            : {{ flight.origin }} to {{ flight.destination }} for {{ flight.duration }} minutes
         </li>
         {% endfor %}
     </ul>
