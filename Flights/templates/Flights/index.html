@@ -11,7 +11,7 @@ Home
     <ul>
         {% for flight in flights %}
         <li>
-            {{ flight.origin }} : {{ flight.destination }} for {{ flight.duration }} minutes
+            Flight {{ flight.id }}: {{ flight.origin }} to {{ flight.destination }} for {{ flight.duration }} minutes
         </li>
         {% endfor %}
     </ul>
