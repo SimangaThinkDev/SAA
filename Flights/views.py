@@ -12,7 +12,9 @@ def flight( request, flight_id ):
     """Gets the flight by flight ID"""
     print("This happpened")
     requested_flight = Flight.objects.get( pk=flight_id )
+    passengers = requested_flight.passengers.all()
     return render( request, "Flights/flight.html", {
-        "flight": requested_flight
+        "flight": requested_flight,
+        "passengers": passengers,
     } )
 

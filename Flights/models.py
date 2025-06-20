@@ -9,7 +9,6 @@ class Airport(models.Model):
 
     def __str__(self):
         return f"{self.city} ({self.code})"
-    
 
 
 class Flight(models.Model):
@@ -20,4 +19,17 @@ class Flight(models.Model):
 
     def __str__(self):
         return f"{self.id}: from {self.origin} to {self.destination} for {self.duration} minutes"
+    
+
+class Passenger(models.Model):
+
+    first = models.CharField( max_length=64 )
+    last = models.CharField( max_length=64 )
+    # The blank identifier helps us to allow users to have no flights assigned to them
+    # The related_name identifier allows us to reverse access the users assigned to a certain flight
+    flights = models.ManyToManyField( Flight, blank=True, related_name="passengers" )
+
+    # For aesthetics
+    def __str__(self) -> str:
+        return f"{self.first} {self.last}"
     
