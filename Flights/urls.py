@@ -9,4 +9,5 @@ app_name = 'flights'
 urlpatterns = [
     path( 'flights', views.index, name='index' ),
     path( 'flights/<int:flight_id>/', views.flight, name="flight" ),
+    path( 'flights/<int:flight_id>/book', views.book, name="book" ),
 ]
