@@ -1,13 +1,12 @@
 
-from django.urls import path, reverse
-from django.http import HttpResponseRedirect
+from django.urls import path
 # from django.
 from . import views
 
 app_name = 'flights'
 
 urlpatterns = [
-    path( 'flights', views.index, name='index' ),
-    path( 'flights/<int:flight_id>/', views.flight, name="flight" ),
-    path( 'flights/<int:flight_id>/book', views.book, name="book" ),
+    path( '', views.index, name='index' ),
+    path( '/<int:flight_id>/', views.flight, name="flight" ),
+    path( '/<int:flight_id>/book', views.book, name="book" ),
 ]
