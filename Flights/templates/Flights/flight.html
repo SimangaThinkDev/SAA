@@ -34,9 +34,9 @@
     {% csrf_token %}
 
     <!-- We want the user to select a passenger -->
-     <select name="passenger" id="">
+     <select name="passenger">
         {% for passenger in non_passengers %}
-            <option value="{{ passenger.id }}"> {{ passenger }} </option>
+            <option id="passenger-id" value="{{ passenger.id }}"> {{ passenger }} </option>
         {% endfor %}
      </select>
 
